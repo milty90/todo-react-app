@@ -1,10 +1,15 @@
 function Input(props) {
-  const { input, add } = props;
+  const { onChange, saveData } = props;
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    onChange(value);
+  };
 
   return (
     <div className="inputBody">
-      <input className="input" onChange={input} />
-      <button className="button" onClick={add}>
+      <input className="input" onChange={handleChange} />
+      <button className="button" onClick={saveData}>
         Add
       </button>
     </div>
