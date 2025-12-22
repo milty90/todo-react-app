@@ -1,6 +1,7 @@
 function Input(props) {
   const { onChange, saveData } = props;
 
+  //lifting state up
   const handleChange = (event) => {
     const value = event.target.value;
     onChange(value);

@@ -55,9 +55,11 @@
   height: 25px;
 }
 
-.todo {
+.todo,
+.no-todo {
   font-size: 1.5rem;
 }
+
 .button,
 .todoButton {
   font-size: 1.5rem;

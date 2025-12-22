@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Input from "./components/Input";
 import Todo from "./components/Todo";
+
+function TextToAdd() {
+  return <p className="no-todo">Keine Todo</p>;
+}
 
 function App() {
   let todoList = [];
@@ -21,6 +25,7 @@ function App() {
     setTodoListState(newTodos);
   };
 
+  //lifting state up
   const handleData = (data) => {
     setInputValue(data);
   };
@@ -28,9 +33,13 @@ function App() {
   return (
     <div className="App">
       <Input onChange={handleData} saveData={() => addTodo(inputValue)} />
-      {todoListState.map((todo, index) => (
-        <Todo key={index} todo={todo} deleteTodo={() => deleteTodo(index)} />
-      ))}
+      {todoListState.length === 0 ? (
+        <TextToAdd />
+      ) : (
+        todoListState.map((todo, index) => (
+          <Todo key={index} todo={todo} deleteTodo={() => deleteTodo(index)} />
+        ))
+      )}
     </div>
   );
 }
