@@ -1,28 +1,21 @@
 import { useState } from "react";
 import "./App.css";
 import Input from "./components/Input";
-import Todo from "./components/Todo";
-
-function TextToAdd() {
-  return <p className="no-todo">Keine Todo</p>;
-}
+import { Todo, TextToAdd } from "./components/Todo";
 
 function App() {
-  let todoList = [];
-
   const [inputValue, setInputValue] = useState("");
-  const [todoListState, setTodoListState] = useState(todoList);
+  const [todoListState, setTodoListState] = useState([]);
 
   const addTodo = () => {
     if (inputValue.trim() === "") return;
-    setTodoListState([inputValue, ...todoListState]);
+    const newTodo = { id: Date.now(), text: inputValue, done: false };
+    setTodoListState((prevTodos) => [newTodo, ...prevTodos]);
     setInputValue("");
   };
 
-  const deleteTodo = (index) => {
-    const newTodos = [...todoListState];
-    newTodos.splice(index, 1);
-    setTodoListState(newTodos);
+  const deleteTodo = (id) => {
+    setTodoListState((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   //lifting state up
@@ -30,14 +23,31 @@ function App() {
     setInputValue(data);
   };
 
+  const handleChange = (id) => {
+    const updatedTodos = todoListState.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, done: !todo.done };
+      }
+      return todo;
+    });
+    setTodoListState(updatedTodos);
+  };
+
+  console.log(todoListState);
+
   return (
     <div className="App">
       <Input onChange={handleData} saveData={() => addTodo(inputValue)} />
       {todoListState.length === 0 ? (
         <TextToAdd />
       ) : (
-        todoListState.map((todo, index) => (
-          <Todo key={index} todo={todo} deleteTodo={() => deleteTodo(index)} />
+        todoListState.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            deleteTodo={() => deleteTodo(todo.id)}
+            handleChange={() => handleChange(todo.id)}
+          />
         ))
       )}
     </div>
