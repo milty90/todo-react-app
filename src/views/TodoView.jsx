@@ -30,11 +30,14 @@ function TodoView() {
     );
   };
 
-  console.log(todoListState);
   return (
     <div className="todoView">
       <div className="todoHeader">
-        <InputItem onChange={handleData} saveData={addTodo} />
+        <InputItem
+          onChange={handleData}
+          saveData={addTodo}
+          value={inputValue}
+        />
       </div>
       <div className="todoBody">
         {todoListState.length === 0 ? (
