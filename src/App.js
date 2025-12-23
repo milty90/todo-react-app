@@ -24,13 +24,11 @@ function App() {
   };
 
   const handleChange = (id) => {
-    const updatedTodos = todoListState.map((todo) => {
-      if (todo.id === id) {
-        return { ...todo, done: !todo.done };
-      }
-      return todo;
-    });
-    setTodoListState(updatedTodos);
+    setTodoListState((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    );
   };
 
   console.log(todoListState);
