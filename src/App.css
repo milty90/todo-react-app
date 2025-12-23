@@ -1,79 +1,113 @@
+:root {
+  --mainBackgroundColor: #443f60;
+  --todoItemBackground: #a194ba;
+  --buttonBackground: #eeba65;
+  --hoverColor: #f4d198;
+  --fontSize: 1.5rem;
+  --baseUnit: 15px;
+  --boxShadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  --gap: 1.5rem;
+}
+
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: top;
   margin-top: 5rem;
   align-items: center;
-  height: 100vh;
-  background-color: #443f60;
   text-align: center;
-  gap: 1.5rem;
+  height: 100vh;
+  background-color: var(--mainBackgroundColor);
 }
 
-.inputBody {
+.todoView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: var(--gap);
+}
+
+.todoHeader,
+.todoBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  gap: var(--gap);
+}
+
+.inputItemBody {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 600px;
-  justify-content: space-between;
+  gap: var(--gap);
 }
 
 .input {
-  width: 75%;
-  font-size: 1.5rem;
-  border-radius: 12px;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: var(--baseUnit);
+  font-size: var(--fontSize);
   border: none;
-  padding-left: 2rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--boxShadow);
 }
 
-.todoBody {
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--hoverColor);
+}
+
+.todoItemBody {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #a194ba;
+  background-color: var(--todoItemBackground);
   width: 100%;
   max-width: 570px;
-  padding: 5px 15px;
-  gap: 1rem;
-  border-radius: 12px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  padding: var(--baseUnit);
+  border-radius: var(--baseUnit);
+  box-shadow: var(--boxShadow);
 }
 
-.todoCheckbox {
+.todoItemCheckbox {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   height: fit-content;
-  gap: 1rem;
+  gap: var(--gap);
 }
 
 .checkbox {
-  border-radius: 12px;
+  margin-left: 5px;
+  border-radius: var(--baseUnit);
   width: 25px;
   height: 25px;
 }
 
-.todo,
-.no-todo {
-  font-size: 1.5rem;
+.checkbox:checked {
+  accent-color: var(--buttonBackground);
 }
 
-.button,
-.todoButton {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.9);
-  background-color: #eeba65;
-  padding: 15px 20px;
-  border-radius: 12px;
-  border: none;
+.label {
+  font-size: var(--fontSize);
+}
+
+.label.checked {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .button {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  font-size: var(--fontSize);
+  background-color: var(--buttonBackground);
+  padding: var(--baseUnit);
+  border-radius: var(--baseUnit);
+  border: none;
 }
 
-.todoButton {
-  padding: 16px 20px;
+.button:hover {
+  cursor: pointer;
+  background-color: var(--hoverColor);
 }
