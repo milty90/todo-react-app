@@ -1,14 +1,3 @@
-:root {
-  --mainBackgroundColor: #443f60;
-  --todoItemBackground: #a194ba;
-  --buttonBackground: #eeba65;
-  --hoverColor: #f4d198;
-  --fontSize: 1.5rem;
-  --baseUnit: 15px;
-  --boxShadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-  --gap: 1.5rem;
-}
-
 .App {
   display: flex;
   flex-direction: column;
@@ -22,17 +11,18 @@
 .todoView {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  justify-content: center;
+  width: 90%;
   gap: var(--gap);
 }
 
 .todoHeader,
 .todoBody {
   display: flex;
+  width: 100%;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 600px;
   gap: var(--gap);
 }
 
@@ -40,31 +30,20 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
   gap: var(--gap);
-}
-
-.input {
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: var(--baseUnit);
-  font-size: var(--fontSize);
-  border: none;
-  box-shadow: var(--boxShadow);
-}
-
-.input:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--hoverColor);
 }
 
 .todoItemBody {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--todoItemBackground);
   width: 100%;
-  max-width: 570px;
+  background-color: var(--todoItemBackground);
   padding: var(--baseUnit);
   border-radius: var(--baseUnit);
   box-shadow: var(--boxShadow);
@@ -77,37 +56,4 @@
   justify-content: center;
   height: fit-content;
   gap: var(--gap);
-}
-
-.checkbox {
-  margin-left: 5px;
-  border-radius: var(--baseUnit);
-  width: 25px;
-  height: 25px;
-}
-
-.checkbox:checked {
-  accent-color: var(--buttonBackground);
-}
-
-.label {
-  font-size: var(--fontSize);
-}
-
-.label.checked {
-  text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.button {
-  font-size: var(--fontSize);
-  background-color: var(--buttonBackground);
-  padding: var(--baseUnit);
-  border-radius: var(--baseUnit);
-  border: none;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: var(--hoverColor);
 }

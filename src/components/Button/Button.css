@@ -1,0 +1,14 @@
+.button {
+  font-size: var(--fontSize);
+  background-color: var(--buttonBackground);
+  padding: var(--baseUnit);
+  border-radius: var(--baseUnit);
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--hoverColor);
+  outline: 3px solid var(--hoverColor);
+  outline-offset: 2px;
+}

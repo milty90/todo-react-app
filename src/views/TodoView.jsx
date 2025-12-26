@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Label from "../components/Label";
-import InputItem from "./InputItem";
+import Label from "../components/Label/Label";
+import InputItem from "./InputItem/InputItem";
 import TodoItem from "./TodoItem";
 
 function TodoView() {
@@ -34,14 +34,14 @@ function TodoView() {
     <div className="todoView">
       <div className="todoHeader">
         <InputItem
-          onChange={handleData}
+          handleChange={handleData}
           saveData={addTodo}
           value={inputValue}
         />
       </div>
       <div className="todoBody">
         {todoListState.length === 0 ? (
-          <Label text="Keine Todos vorhanden, bitte füge welche hinzu!" />
+          <Label text="Keine Todos vorhanden!" />
         ) : (
           todoListState.map((todo) => (
             <TodoItem

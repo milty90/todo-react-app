@@ -1,0 +1,10 @@
+.checkbox {
+  margin-left: 5px;
+  border-radius: var(--baseUnit);
+  width: 25px;
+  height: 25px;
+}
+
+.checkbox:checked {
+  accent-color: var(--buttonBackground);
+}

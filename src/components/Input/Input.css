@@ -1,0 +1,13 @@
+.input {
+  flex-grow: 1;
+  padding: 13px 20px;
+  border-radius: var(--baseUnit);
+  font-size: var(--fontSize);
+  border: 2px solid transparent;
+  box-shadow: var(--boxShadow);
+}
+
+.input:focus {
+  outline: 3px solid var(--hoverColor);
+  outline-offset: 2px;
+}
