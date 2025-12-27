@@ -1,6 +1,7 @@
-import Button from "../components/Button/Button";
-import Checkbox from "../components/Checkbox/Checkbox";
-import Label from "../components/Label/Label";
+import Button from "../../components/Button/Button";
+import Checkbox from "../../components/Checkbox/Checkbox";
+import Label from "../../components/Label/Label";
+import "./TodoItem.css";
 
 function TodoItem({ todo, onChange, deleteTodo }) {
   const handleCheckBoxChange = (event) => {

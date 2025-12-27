@@ -12,3 +12,9 @@
   outline: 3px solid var(--hoverColor);
   outline-offset: 2px;
 }
+
+@media (max-width: 600px) {
+  .button {
+    font-size: var(--fontMobileSize);
+  }
+}

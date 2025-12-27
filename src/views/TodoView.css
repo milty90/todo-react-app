@@ -1,0 +1,22 @@
+.todoView {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: var(--gap);
+}
+
+.todoHeader,
+.todoBody {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+@media screen and (max-width: 600px) {
+  .todoView {
+    width: 90%;
+  }
+}

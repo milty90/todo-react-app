@@ -1,0 +1,21 @@
+.todoItemBody {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--todoItemBackground);
+  padding: var(--baseUnit);
+  border-radius: var(--baseUnit);
+  box-shadow: var(--boxShadow);
+}
+
+.todoItemCheckbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+  overflow: hidden;
+  gap: 0.7rem;
+}

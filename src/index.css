@@ -13,7 +13,9 @@ body {
   --todoItemBackground: #a194ba;
   --buttonBackground: #eeba65;
   --hoverColor: #f4d198;
+  --mobileBreakpoint: 600px;
   --fontSize: 1.5rem;
+  --fontMobileSize: 1.2rem;
   --baseUnit: 15px;
   --boxShadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   --gap: 1.5rem;
