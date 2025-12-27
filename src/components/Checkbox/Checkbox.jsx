@@ -1,12 +1,12 @@
 import "./Checkbox.css";
 
-function Checkbox({ todo, handleCheckBoxChange }) {
+function Checkbox({ id, checked, handleCheckBoxChange }) {
   return (
     <input
-      id={todo.id}
+      id={id}
       className="checkbox"
       type="checkbox"
-      checked={todo.done}
+      checked={checked}
       onChange={handleCheckBoxChange}
     />
   );
